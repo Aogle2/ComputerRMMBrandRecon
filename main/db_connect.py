@@ -7,5 +7,5 @@ def db_connect(filepath):
         print("thisfile exist")
 
 
-for root in os.walk(os.pardir):
+for root in os.walk(os.join(os.pardir,'Data')):
     print(root)
