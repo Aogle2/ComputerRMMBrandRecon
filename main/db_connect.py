@@ -1,12 +1,10 @@
 import os
 import sqlite3 as sql
-import pathlib as path
+from pathlib import Path
 
-def db_connect(filepath):
-    if filepath.exist():
+def db_connect(filepath=os.path.join(os.pardir,'Data',"TestDB.db")):
+    if Path(filepath):
         print("thisfile exist")
 
 
-for root in os.walk(os.path.join(os.pardir,'Data')):
-    print(root)
-    print(root[-1][-1])
+db_connect()
