@@ -44,3 +44,6 @@ print("out of loop")
 #test file pathing
 
 print(os.path.join(os.environ['HOMEPATH']))
+
+
+print(os.path.join(os.curdir,"file.db"))
