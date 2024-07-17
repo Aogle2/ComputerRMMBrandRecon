@@ -2,9 +2,12 @@ import os
 import sqlite3 as sql
 from pathlib import Path
 
-def db_connect(filepath=os.path.join(os.pardir,'Data',"TestDB.db")):
+def file_check(func,filepath=os.path.join(os.pardir,'Data',"TestDB.db")):
     if Path(filepath):
         print("thisfile exist")
+        return filepath
 
 
-db_connect()
+@file_check
+def test():
+    print("Test")
