@@ -8,14 +8,12 @@ def file_check(func):
         print("thisfile exist 1")
 
 
-@file_check #Overview here: https://realpython.com/primer-on-python-decorators/
-def test():
-    print("Test 2")
+#Overview here: https://realpython.com/primer-on-python-decorators/
+
 
 
 
 #--------------------------------------------------
-
 def db_test():
     DB = sql.connect(database= os.path.join(os.pardir,'Data',"TestDB.db"))
     cur = DB.cursor()
