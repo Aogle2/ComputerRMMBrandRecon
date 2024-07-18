@@ -3,6 +3,7 @@ import random
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+import main
 
 root = tk.Tk()
 root.geometry('300x320')
@@ -15,6 +16,8 @@ def change_text ():
 
 def change_text2():
     first_button.config(text=os.environ['HOMEPATH'])
+    third_button = Button(root,text="I popped up")
+    third_button.pack()
 
 #https://pythonguides.com/python-tkinter-multiple-windows-tutorial/
 HEIGHT = 300
