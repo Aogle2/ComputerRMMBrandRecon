@@ -4,18 +4,28 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 import main
+import platform as pl
 
 root = tk.Tk()
 root.geometry('300x320')
 root.resizable(False, False)
 root.title('Test')
 
+def check_os():
+    if pl.system() == 'Darwin':
+        rootpath = 'HOME'
+        return rootpath
+    else:
+        rootpath = 'HOMEPATH'
+        return rootpath
+
+
 def change_text ():
     first_button.config(text="Change Text")
     New_Window()
 
 def change_text2():
-    first_button.config(text=os.environ['HOMEPATH'])
+    first_button.config(text=os.environ[check_os()])
     third_button = Button(root,text="I popped up")
     third_button.pack()
 
@@ -44,9 +54,5 @@ print("out of loop")
 #Look at this: https://www.geeksforgeeks.org/how-to-place-a-button-at-any-position-in-tkinter/
 
 
-#test file pathing
+#Linux and Mac seem to use 'home' instead of 'homepath'
 
-print(os.path.join(os.environ['HOMEPATH']))
-
-
-print(os.path.join(os.curdir,"file.db"))
