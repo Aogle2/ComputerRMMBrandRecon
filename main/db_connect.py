@@ -22,3 +22,5 @@ def db_test():
 
 
 db_test()
+
+#look into this https://stackoverflow.com/questions/71362727/python-sqlite3-insert-data-from-for-loop
