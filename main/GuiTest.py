@@ -1,13 +1,14 @@
 import os
 import random
 import tkinter as tk
+import tkinter.filedialog
 from tkinter import ttk
 from tkinter import *
 import main
 import platform as pl
 
 root = tk.Tk()
-root.geometry('300x320')
+root.geometry('400x400')
 root.resizable(False, False)
 root.title('Test')
 
@@ -19,14 +20,13 @@ def check_os():
         rootpath = 'HOMEPATH'
         return rootpath
 
-
 def change_text ():
     first_button.config(text="Change Text")
     New_Window()
 
 def change_text2():
     first_button.config(text=os.environ[check_os()])
-    third_button = Button(root,text="I popped up")
+    third_button = Button(root,text="I popped up",command=tkinter.filedialog.asksaveasfilename(filetypes=[("SQLite Things","*.db")]))
     third_button.pack()
 
 #https://pythonguides.com/python-tkinter-multiple-windows-tutorial/
