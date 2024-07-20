@@ -2,11 +2,18 @@ import os
 import sqlite3 as sql
 from pathlib import Path
 
-def file_check(func):
-    filepath= os.path.join(os.pardir,'Data',"TestDB.db")
-    if Path(filepath):
-        print("thisfile exist 1")
 
+#This checks to see if the db file is present. This is for now, almost a hardcoded path.
+def file_check(dbname):
+    filepath = os.path.join(os.pardir,'data',dbname)
+    if Path(filepath).is_file():
+        print(f"{dbname} exist.")
+    else:
+        print(f"{dbname} does not exist or you or I mistyped the file")
+
+
+
+file_check("TestDB.db")
 
 #Overview here: https://realpython.com/primer-on-python-decorators/
 
@@ -15,7 +22,7 @@ def file_check(func):
 
 #--------------------------------------------------
 def db_test():
-    DB = sql.connect(database= os.path.join(os.pardir,'Data',"TestDB.db"))
+    DB = sql.connect(database= os.path.join(os.pardir,'data',"TestDB.db"))
     cur = DB.cursor()
     cur.execute('SELECT sqlite_version()')
     print(cur.fetchone()[-1])
