@@ -10,12 +10,14 @@ import os
 ##Create one that is used over and over to check if the DB is present and to run a test if the file is valid.
 def file_check(dbname):
     filepath = os.path.join(os.pardir,'data',dbname)
-    if Path(filepath).is_file():
+    if Path.Path(filepath).is_file():
         print(f"{dbname} exist.")
     else:
         print(f"{dbname} does not exist or you or I mistyped the file")
 
 file_check("TestDB.db")
+
+
 
 #Create a function that will do the select test with one table at a tiem.
 
