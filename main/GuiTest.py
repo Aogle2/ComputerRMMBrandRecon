@@ -24,13 +24,14 @@ def check_os():
 
 def change_text ():
     first_button.config(text="Change Text")
+    root.geometry('400x400')
     New_Window()
 
 def change_text2():
     first_button.config(text=os.environ[check_os()])
     third_button = Button(root,text="I popped up",command=tkinter.filedialog.asksaveasfilename(filetypes=[("SQLite Things","*.db")])).grid(row=4, column=0)
     New_Window()
-    #root.geometry('800x600') this is really cool
+    root.geometry('800x600') #this is really cool
 
 
 #https://pythonguides.com/python-tkinter-multiple-windows-tutorial/
@@ -50,7 +51,8 @@ def New_Window():
 
 
 first_button = Button(root,text ="Click Here",command=change_text2)
-first_button.grid(row=3,column=1)
+buttonthin = Button(root,text="This thing",command=change_text).grid(row=24,column=5)
+first_button.grid(row=5,column=6)
 print("Main Loop")
 root.mainloop()
 print("out of loop")
