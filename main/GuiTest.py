@@ -7,6 +7,8 @@ from tkinter import *
 import main
 import platform as pl
 
+
+#https://www.pythonguis.com/tutorials/create-ui-with-tkinter-grid-layout-manager/
 root = tk.Tk()
 root.geometry('400x400')
 root.resizable(False, False)
@@ -27,6 +29,8 @@ def change_text ():
 def change_text2():
     first_button.config(text=os.environ[check_os()])
     third_button = Button(root,text="I popped up",command=tkinter.filedialog.asksaveasfilename(filetypes=[("SQLite Things","*.db")])).grid(row=4, column=0)
+    New_Window()
+    #root.geometry('800x600') this is really cool
 
 
 #https://pythonguides.com/python-tkinter-multiple-windows-tutorial/
@@ -34,9 +38,10 @@ HEIGHT = 300
 WIDTH = 500
 def New_Window():
     Window = tk.Toplevel()
+    Window.geometry('320x250')
     canvas = tk.Canvas(Window, height=HEIGHT, width=WIDTH)
-    Button(Window, text="Don't click here?", command=change_text).grid(row=1, column=0)
-    b_button = Button(Window, text="envion test", command=change_text2)
+    first_button= Button(Window, text="Don't click here?", command=change_text).grid(row=1, column=0)
+    Button(Window, text="envion test", command=change_text2)
     print("New Window!")
 
 

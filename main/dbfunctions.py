@@ -5,6 +5,7 @@ This is going to use Pandas for the exporting of the DB into a csv or excel file
 
 """
 import pathlib as Path
+import pandas as pd
 import os
 
 ##Create one that is used over and over to check if the DB is present and to run a test if the file is valid.
