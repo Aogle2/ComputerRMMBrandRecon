@@ -6,7 +6,7 @@ import pandastable as pt
 
 #building the main window
 root = tkinter.Tk()
-root.geometry('300x300')
+root.geometry('300x200')
 root.resizable(width=False,height=False)
 root.title("Computer Recon")
 
@@ -51,8 +51,7 @@ def check_Excel_export():
             variable=excelControlVar)
                 .grid(row=1,column=3))
 
-status_lable = tkinter.Label(root,text=f"Hello there...{os.getlogin()}")
-status_lable.place(relx=0.0,rely=1.0,anchor="sw")
+tkinter.Label(root,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw")
 
 
 
