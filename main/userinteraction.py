@@ -20,12 +20,12 @@ root.title("Computer Recon")
 (Button(root,
        text="Summary",
        command="")
-        .grid(row=1,column=0))
+            .grid(row=1,column=0))
 
 (Button(root,
        text="Summary Visual",
        command="")
-        .grid(row=2,column=0))
+            .grid(row=2,column=0))
 
 
 #Control Variables for the CheckButton Widgets
