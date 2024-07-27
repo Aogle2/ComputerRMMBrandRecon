@@ -51,7 +51,8 @@ def check_Excel_export():
             variable=excelControlVar)
                 .grid(row=1,column=3))
 
-
+status_lable = tkinter.Label(root,text=f"Hello there...{os.getlogin()}")
+status_lable.place(relx=0.0,rely=1.0,anchor="sw")
 
 
 
