@@ -72,9 +72,9 @@ excel_checkbox = (Checkbutton(primary,
 
 
 
-mainlable = tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw")
-
-
+mainlable = (tkinter.Label(primary,
+                          text=f"Hello there...{os.getlogin()}?")
+                                .place(relx=0.0,rely=1.0,anchor="sw"))
 
 
 
