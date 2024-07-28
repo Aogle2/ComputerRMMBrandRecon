@@ -25,12 +25,12 @@ def aboutme():
 #https://www.plus2net.com/python/tkinter-mysql.php
 def create_new_pt():
     newpt = tkinter.Toplevel()
-    newpt.resizable(width=False,height=False)
+    #newpt.resizable(width=False,height=False)
     cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "testdb.db"))
     df= pandas.read_sql("SELECT * FROM OperatingSystem", cnx)
     svb = tkinter.Frame(newpt)
-    svb.pack()
-    Table(svb,dataframe=df).show()
+    svb.pack(fill='both', expand=True)
+    Table(svb,dataframe=df,showtoolbar=True,showstatusbar=True).show()
 
 
 
