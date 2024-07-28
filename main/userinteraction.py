@@ -2,7 +2,7 @@ import tkinter
 from tkinter import *
 
 import pandas as pd
-from pandastable import Table, TableModel
+import matplotlib as mplot
 import pandas
 import os
 
@@ -13,16 +13,8 @@ primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
 data = pd.read_excel(r"P:\CodeLouisville Final Project\ComputerDump.xlsx")
-class NewPandasTable():
-    def newPT(self, dft):
-        self.ptwindow = tkinter.Tk()
-        self.frame = tkinter.Frame(self.ptwindow)
-        self.frame.pack()
-        self.table = Table(self.frame, dataframe=dft)
-    def showPT(self):
-        self.table.show()
 
-NewTable = NewPandasTable.newPT(dft=data)
+
 
 
 def aboutme():
@@ -51,7 +43,7 @@ summary = (Button(primary,
 
 summary_visual = (Button(primary,
        text="Summary Visual",
-       command=NewTable)
+       command=data.plot)
             .grid(row=2,column=0))
 
 
