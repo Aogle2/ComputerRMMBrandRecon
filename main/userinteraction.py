@@ -22,7 +22,7 @@ def aboutme():
                    wraplength=185,
                    justify="center").pack()
 
-
+#https://www.plus2net.com/python/tkinter-mysql.php
 def create_new_pt():
     newpt = tkinter.Tk()
 
