@@ -4,14 +4,19 @@ use this file to create the functions needed to interact with the Database.
 This is going to use Pandas for the exporting of the DB into a csv or excel file.
 
 """
-import pathlib as Path
+from pathlib import Path
 import pandas as pd
+from pandastable import Table, TableModel
+import tkinter
 import os
+
+
+
 
 ##Create one that is used over and over to check if the DB is present and to run a test if the file is valid.
 def file_check(dbname):
     filepath = os.path.join(os.pardir,'data',dbname)
-    if Path.Path(filepath).is_file():
+    if Path(filepath).is_file():
         print(f"{dbname} exist.")
     else:
         print(f"{dbname} does not exist or you or I mistyped the file")

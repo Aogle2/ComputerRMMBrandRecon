@@ -1,7 +1,6 @@
 import os
 import sqlite3 as sql
 from pathlib import Path
-import main
 
 
 #This checks to see if the db file is present. This is for now, almost a hardcoded path.
