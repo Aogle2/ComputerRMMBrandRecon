@@ -1,6 +1,9 @@
 import os
+import sqlite3
 import sqlite3 as sql
 from pathlib import Path
+
+import pandas
 
 
 #This checks to see if the db file is present. This is for now, almost a hardcoded path.
@@ -13,8 +16,6 @@ def file_check(dbname):
 
 
 
-file_check("TestDB.db")
-
 #Overview here: https://realpython.com/primer-on-python-decorators/
 
 
@@ -22,13 +23,20 @@ file_check("TestDB.db")
 
 #--------------------------------------------------
 def db_test():
+    results = []
     DB = sql.connect(database= os.path.join(os.pardir,'data',"TestDB.db"))
     cur = DB.cursor()
-    cur.execute('SELECT sqlite_version()')
-    results = cur.fetchone()[-1]
+    cur.execute('SELECT * FROM OperatingSystem;')#cur.execute('SELECT sqlite_version()')
+    for row in cur.fetchall(): #results = cur.fetchone()[-1]
+          row += results
     if results:
         print("data is present.")
+    return results
 
-db_test()
+def pd_sql():
+    cnx = sqlite3.connect(database=os.path.join(os.pardir,'data',"testdb.db"))
+    df = pandas.read_sql("SELECT * FROM Vendor",cnx)
+    return df.to_string()
+
 
 #look into this https://stackoverflow.com/questions/71362727/python-sqlite3-insert-data-from-for-loop

@@ -1,9 +1,8 @@
 import tkinter
+from pandastable import Table
 from tkinter import *
-
-import pandas as pd
-import matplotlib.pyplot as plt
 import pandas
+import sqlite3
 import os
 
 #building the main window
@@ -11,6 +10,9 @@ primary = tkinter.Tk()
 primary.geometry('300x200')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
+
+
+
 
 def aboutme():
      amWindow = tkinter.Toplevel()
@@ -21,6 +23,14 @@ def aboutme():
                    justify="center").pack()
 
 
+def create_new_pt():
+    newpt = tkinter.Tk()
+
+    cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "testdb.db"))
+    df= pandas.read_sql("SELECT * FROM Vendor", cnx)
+    svb = tkinter.Frame(newpt)
+    svb.pack()
+    Table(svb,dataframe=df).show()
 
 
 
@@ -38,7 +48,7 @@ summary = (Button(primary,
 
 summary_visual = (Button(primary,
        text="Summary Visual",
-       command=data.plot)
+       command=create_new_pt)
             .grid(row=2,column=0))
 
 
