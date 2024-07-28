@@ -2,7 +2,7 @@ import tkinter
 from tkinter import *
 
 import pandas as pd
-import matplotlib as mplot
+import matplotlib.pyplot as plt
 import pandas
 import os
 
@@ -11,11 +11,6 @@ primary = tkinter.Tk()
 primary.geometry('300x200')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
-
-data = pd.read_excel(r"P:\CodeLouisville Final Project\ComputerDump.xlsx")
-
-
-
 
 def aboutme():
      amWindow = tkinter.Toplevel()
