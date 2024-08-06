@@ -12,9 +12,7 @@ primary.geometry('300x200')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
-
-
-
+#Look into this https://www.daniweb.com/programming/software-development/threads/124403/sqlite3-how-to-see-column-names-for-table
 def mpltest():
     fig, ax = plt.subplots()
 
@@ -29,6 +27,7 @@ def mpltest():
     ax.set_title('Fruit supply by kind and color')
     ax.legend(title='Fruit color')
     plt.show()
+
 
 
 def aboutme():
@@ -54,6 +53,8 @@ def create_new_pt():
     svb = tkinter.Frame(newpt)
     svb.pack(fill='both', expand=True)
     Table(svb,dataframe=df,showtoolbar=True,showstatusbar=True).show()
+    if excelControlVar.get() == True:
+        df.to_excel(tkinter.filedialog.asksaveasfilename(filetypes=[("SQLite Things","*.db")]))
 
 
 
@@ -71,15 +72,10 @@ csvControlVar = tkinter.IntVar()
 excelControlVar = tkinter.IntVar()
 
 #Checkbox for export to csv or excel
-def check_CSV_export():
-    print(csvControlVar.get())
 
-def check_Excel_export():
-    print(excelControlVar.get())
+csv_checkbox = (Checkbutton(primary,text="CSV Export",command="",variable=csvControlVar,relief="sunken").grid(row=0,column=3))
 
-csv_checkbox = (Checkbutton(primary,text="CSV Export",command=check_CSV_export,variable=csvControlVar,relief="sunken").grid(row=0,column=3))
-
-excel_checkbox = (Checkbutton(primary,text="Excel Export",command=check_Excel_export,variable=excelControlVar,relief="sunken").grid(row=1,column=3))
+excel_checkbox = (Checkbutton(primary,text="Excel Export",command="",variable=excelControlVar,relief="sunken").grid(row=1,column=3))
 
 
 
