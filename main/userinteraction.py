@@ -12,13 +12,20 @@ primary.geometry('300x200')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
+
+def basequery(query):
+    cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "testdb.db"))
+    df = pandas.read_sql(query, cnx)
+    cnx.close()
+    return df
+
 #Look into this https://www.daniweb.com/programming/software-development/threads/124403/sqlite3-how-to-see-column-names-for-table
 def mpltest():
     fig, ax = plt.subplots()
 
     fruits = ['apple', 'blueberry', 'cherry', 'orange']
     counts = [40, 100, 30, 55]
-    bar_labels = ['Operaing Systems IN ', 'blue', '_red', 'orange']
+    bar_labels = [ 'blue', '_red', 'orange']
     bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
     ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
@@ -28,13 +35,31 @@ def mpltest():
     ax.legend(title='Fruit color')
     plt.show()
 
+"""
+    Bar lables would need to be from the OS Name from the OS table as well as the fruites
+    Counts would have to be the total counted from that table.
+"""
+
+testdf = basequery(
+    "SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
+testdf.fillna('Linux', inplace=True)
+testdf['OS Manufacturer'] = testdf['OS Manufacturer'].astype(str)
+
+# Plotting with Matplotlib
+plt.figure(figsize=(10, 6))  # Optional: Set the figure size
+plt.bar(testdf['OS Manufacturer'], testdf['count'])
+plt.xlabel('Operating System')
+plt.ylabel('Count')
+plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
+plt.tight_layout()  # Adjust layout to prevent clipping of labels
+plt.show()
 
 
 def aboutme():
      amWindow = tkinter.Toplevel()
      amWindow.geometry("200x200")
      tkinter.Label(amWindow,text=r"Made by AA-Ron Ogle. All this program does Is show a visual of data in a neat way.",wraplength=185,justify="center").pack()
-     mpltest()
+
 
 
 
@@ -75,9 +100,9 @@ excelControlVar = tkinter.IntVar()
 
 #Checkbox for export to csv or excel
 
-csv_checkbox = (Checkbutton(primary,text="CSV Export",command="",variable=csvControlVar,relief="sunken").grid(row=0,column=3))
+#csv_checkbox = (Checkbutton(primary,text="CSV Export",command="",variable=csvControlVar,relief="sunken").grid(row=0,column=3))
 
-excel_checkbox = (Checkbutton(primary,text="Excel Export",command="",variable=excelControlVar,relief="sunken").grid(row=1,column=3))
+#excel_checkbox = (Checkbutton(primary,text="Excel Export",command="",variable=excelControlVar,relief="sunken").grid(row=1,column=3))
 
 
 
