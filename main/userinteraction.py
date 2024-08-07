@@ -12,7 +12,7 @@ primary.geometry('300x200')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
-
+#Consolidate how I want the data to be retreaved, saves time instead of typing this over and over.
 def basequery(query):
     cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "testdb.db"))
     df = pandas.read_sql(query, cnx)
@@ -20,25 +20,6 @@ def basequery(query):
     return df
 
 #Look into this https://www.daniweb.com/programming/software-development/threads/124403/sqlite3-how-to-see-column-names-for-table
-def mpltest():
-    fig, ax = plt.subplots()
-
-    fruits = ['apple', 'blueberry', 'cherry', 'orange']
-    counts = [40, 100, 30, 55]
-    bar_labels = [ 'blue', '_red', 'orange']
-    bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
-
-    ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
-
-    ax.set_ylabel('fruit supply')
-    ax.set_title('Fruit supply by kind and color')
-    ax.legend(title='Fruit color')
-    plt.show()
-
-"""
-    Bar lables would need to be from the OS Name from the OS table as well as the fruites
-    Counts would have to be the total counted from that table.
-"""
 
 testdf = basequery(
     "SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
