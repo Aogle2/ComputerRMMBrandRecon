@@ -21,20 +21,16 @@ def basequery(query):
 
 #Look into this https://www.daniweb.com/programming/software-development/threads/124403/sqlite3-how-to-see-column-names-for-table
 
-testdf = basequery(
-    "SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
-testdf.fillna('Linux', inplace=True)
-testdf['OS Manufacturer'] = testdf['OS Manufacturer'].astype(str)
+def newplot():
+    testdf = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
+    testdf.fillna('Linux', inplace=True)
+    testdf['OS Manufacturer'] = testdf['OS Manufacturer'].astype(str)
 
-# Plotting with Matplotlib
-plt.figure(figsize=(10, 6))  # Optional: Set the figure size
-plt.bar(testdf['OS Manufacturer'], testdf['count'])
-plt.xlabel('Operating System')
-plt.ylabel('Count')
-plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
-plt.tight_layout()  # Adjust layout to prevent clipping of labels
-plt.show()
-
+    plt.bar(testdf['OS Manufacturer'], testdf['count'])
+    plt.xlabel('Operating System')
+    plt.ylabel('Count')
+    plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
+    plt.tight_layout()  # Adjust layout to prevent clipping of labels
 
 def aboutme():
      amWindow = tkinter.Toplevel()
