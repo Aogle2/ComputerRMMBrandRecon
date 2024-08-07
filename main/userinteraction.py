@@ -18,7 +18,7 @@ def mpltest():
 
     fruits = ['apple', 'blueberry', 'cherry', 'orange']
     counts = [40, 100, 30, 55]
-    bar_labels = ['red', 'blue', '_red', 'orange']
+    bar_labels = ['Operaing Systems IN ', 'blue', '_red', 'orange']
     bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
     ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
@@ -39,10 +39,12 @@ def aboutme():
 
 
 
-query = ("SELECT"
-         " COUNT('OS Name')as OS,"
-         " COUNT('OS Manufacturer') as Manufacturer"
-         " FROM OperatingSystem")
+#query = ("SELECT"
+#         " COUNT('OS Name')as OS,"
+#         " COUNT('OS Manufacturer') as Manufacturer"
+#         " FROM OperatingSystem")
+
+query = ("SELECT COUNT(*) FROM OperatingSystem GROUP BY [OS Manufacturer]")
 
 #https://www.plus2net.com/python/tkinter-mysql.php
 def create_new_pt():
