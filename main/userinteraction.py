@@ -21,12 +21,24 @@ def basequery(query):
 #for creating the value numbers on the bars
 #https://www.geeksforgeeks.org/adding-value-labels-on-a-matplotlib-bar-chart/
 
-def osview():
-    testdf = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
-    testdf.fillna('Linux', inplace=True)
-    testdf['OS Manufacturer'] = testdf['OS Manufacturer'].astype(str)
+def venderview():
+    query = basequery("SELECT vtype as [Vendor Type], COUNT(vName) as Count FROM Vendor GROUP BY vtype;")
+    query['Vendor Type'] = query['Vendor Type'].astype(str)
 
-    plt.bar(testdf['OS Manufacturer'], testdf['count'])
+    plt.bar(query['Vendor Type'], query['Count'])
+    plt.xlabel('Vendor Type')
+    plt.ylabel('Count')
+    plt.title('Count of Vendors Used')  # Rotate x-axis labels if needed
+    plt.tight_layout()  # Adjust layout to prevent clipping of labels
+    plt.show()
+
+
+def osview():
+    query = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
+    query.fillna('Linux', inplace=True)
+    query['OS Manufacturer'] = query['OS Manufacturer'].astype(str)
+
+    plt.bar(query['OS Manufacturer'], query['count'])
     plt.xlabel('Operating System')
     plt.ylabel('Count')
     plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
@@ -43,7 +55,7 @@ def aboutme():
 
 #All teh buttons, and their placement in the grid as well as their commands.
 (Button(primary,text="About",command=aboutme).grid(row=0,column=0))
-(Button(primary,text="Vendor Summary",command="").grid(row=1,column=0))
+(Button(primary,text="Vendor Summary",command=venderview).grid(row=1,column=0))
 (Button(primary,text="Manufacturer Summary",command="").grid(row=2,column=0))
 (Button(primary,text="Operating System View",command=osview).grid(row=3,column=0))
 
