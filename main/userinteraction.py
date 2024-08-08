@@ -7,7 +7,7 @@ import os
 
 #building the main window this will be the main hub for how things are viewed.
 #This is also the first thing that opens.
-#Scaleing will screw this up on diffrent platforms.
+#Scaling will screw this up on diffrent platforms.
 primary = tkinter.Tk()
 primary.geometry('325x350')
 primary.resizable(width=False,height=False)
