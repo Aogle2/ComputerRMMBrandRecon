@@ -41,16 +41,14 @@ def aboutme():
 
 
 
-
-
 #All teh buttons, and their placement in the grid as well as their commands.
-about_me = (Button(primary,text="About",command=aboutme).grid(row=0,column=0))
+(Button(primary,text="About",command=aboutme).grid(row=0,column=0))
 
-summary = (Button(primary,text="Summary",command="").grid(row=1,column=0))
+(Button(primary,text="Summary",command="").grid(row=1,column=0))
 
-summary_visual = (Button(primary,text="Operating System View",command=osview).grid(row=2,column=0))
+(Button(primary,text="Operating System View",command=osview).grid(row=2,column=0))
 
-mainlable = (tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
+(tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
 
 
 
