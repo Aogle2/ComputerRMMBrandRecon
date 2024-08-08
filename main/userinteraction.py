@@ -1,5 +1,4 @@
 import tkinter
-from pandastable import Table
 import matplotlib.pyplot as plt
 from tkinter import *
 import pandas
@@ -14,7 +13,7 @@ primary.title("Computer Recon")
 
 #Consolidate how I want the data to be retreaved, saves time instead of typing this over and over.
 def basequery(query):
-    cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "testdb.db"))
+    cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "TestDB.db"))
     df = pandas.read_sql(query, cnx)
     cnx.close()
     return df
@@ -31,6 +30,7 @@ def newplot():
     plt.ylabel('Count')
     plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
+    plt.show()
 
 def aboutme():
      amWindow = tkinter.Toplevel()
@@ -68,7 +68,7 @@ about_me = (Button(primary,text="About",command=aboutme).grid(row=0,column=0))
 
 summary = (Button(primary,text="Summary",command="").grid(row=1,column=0))
 
-summary_visual = (Button(primary,text="Summary Visual",command=create_new_pt).grid(row=2,column=0))
+summary_visual = (Button(primary,text="Summary Visual",command=newplot).grid(row=2,column=0))
 
 
 #Control Variables for the CheckButton Widgets
