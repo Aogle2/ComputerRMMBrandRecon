@@ -66,7 +66,7 @@ def manufacturersummary():
     plt.show()
 
 def aboutme():
-     amWindow = tkinter.Toplevel()                                          #Make this window a child of the main window process, closes with the main is closed as well.
+     amWindow = tkinter.Toplevel()                                          #Make this window a child of the main window process, closes with the main Window.
      amWindow.geometry("200x200")
      tkinter.Label(amWindow,text=r"Made by AA-Ron Ogle. All this program does Is show a visual of data in a neat way.",wraplength=185,justify="center").pack()
 
