@@ -11,6 +11,10 @@ primary.geometry('325x350')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
+def addlabels(x,y):
+    for i in range(len(x)):
+        plt.text(i,y[i],y[i])
+
 #Consolidate how I want the data to be retreaved, saves time instead of typing this over and over.
 def basequery(query):
     cnx = sqlite3.connect(database=os.path.join(os.pardir, 'data', "TestDB.db"))
@@ -24,6 +28,7 @@ def basequery(query):
 def venderview():
     query = basequery("SELECT vtype as [Vendor Type], COUNT(vName) as Count FROM Vendor GROUP BY vtype;")
     query['Vendor Type'] = query['Vendor Type'].astype(str)
+    #Split the df into two list
 
     plt.bar(query['Vendor Type'], query['Count'])
     plt.xlabel('Vendor Type')
@@ -38,6 +43,7 @@ def osview():
     query = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS Count FROM OperatingSystem GROUP BY [OS Manufacturer];")
     query.fillna('Linux', inplace=True)
     query['OS Manufacturer'] = query['OS Manufacturer'].astype(str)
+    #Split the query into two list
 
     plt.bar(query['OS Manufacturer'], query['Count'])
     plt.xlabel('Operating System')
@@ -50,6 +56,8 @@ def osview():
 def manufacturersummary():
     query = basequery("SELECT vName as [Vendor Name], COUNT(vtype) as Count FROM Model JOIN Vendor ON Model.v_id = Vendor.v_id GROUP BY vType ORDER BY (COUNT(vName)) LIMIT 5")
     query['Vendor Name'] = query['Vendor Name'].astype(str)
+    #Split the query into two list.
+
     plt.bar(query['Vendor Name'], query['Count'])
     plt.xlabel('Vendor Name')
     plt.ylabel('Count')
