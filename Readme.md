@@ -35,4 +35,9 @@ Wait for pip to install all the requirements.
 
 10. Enjoy the little demo and click around? It's fairly easy to break but shows a bit of what is possible and what could be inspired by it.
 
-When done type in ``` deactivate ``` to leave the virtual enviroment. 
+When done type in ``` deactivate ``` to leave the virtual enviroment.
+
+
+## Getting Started On MacOS Based Systems
+
+ 
