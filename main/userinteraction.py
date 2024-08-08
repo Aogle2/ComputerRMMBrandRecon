@@ -9,7 +9,7 @@ import os
 #This is also the first thing that opens.
 #Scaling will screw this up on diffrent platforms.
 primary = tkinter.Tk()
-primary.geometry('325x350')
+primary.geometry('225x175')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
@@ -72,10 +72,10 @@ def aboutme():
 
 
 #All teh buttons, and their placement in the grid as well as their commands.
-(Button(primary,text="About",command=aboutme).grid(row=0,column=0))
-(Button(primary,text="Vendor Summary",command=venderview).grid(row=1,column=0))
-(Button(primary,text="Manufacturer Summary",command=manufacturersummary).grid(row=2,column=0))
-(Button(primary,text="Operating System View",command=osview).grid(row=3,column=0))
+(Button(primary,text="About",command=aboutme).pack())
+(Button(primary,text="Vendor Summary",command=venderview).pack())
+(Button(primary,text="Manufacturer Summary",command=manufacturersummary).pack())
+(Button(primary,text="Operating System View",command=osview).pack())
 
 (tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
 
