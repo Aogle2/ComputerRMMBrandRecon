@@ -7,7 +7,7 @@ import os
 
 #building the main window
 primary = tkinter.Tk()
-primary.geometry('325x200')
+primary.geometry('325x350')
 primary.resizable(width=False,height=False)
 primary.title("Computer Recon")
 
@@ -43,10 +43,9 @@ def aboutme():
 
 #All teh buttons, and their placement in the grid as well as their commands.
 (Button(primary,text="About",command=aboutme).grid(row=0,column=0))
-
-(Button(primary,text="Summary",command="").grid(row=1,column=0))
-
-(Button(primary,text="Operating System View",command=osview).grid(row=2,column=0))
+(Button(primary,text="Vendor Summary",command="").grid(row=1,column=0))
+(Button(primary,text="Manufacturer Summary",command="").grid(row=2,column=0))
+(Button(primary,text="Operating System View",command=osview).grid(row=3,column=0))
 
 (tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
 
