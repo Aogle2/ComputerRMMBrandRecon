@@ -1,4 +1,5 @@
 import tkinter
+from pandastable import Table
 import matplotlib.pyplot as plt
 from tkinter import *
 import pandas
@@ -36,7 +37,6 @@ def venderview():
     plt.title('Count of Vendors Used')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
     plt.show()
-    plt.close()
 
 
 def osview():
@@ -51,7 +51,6 @@ def osview():
     plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
     plt.show()
-    plt.close()
 
 def manufacturersummary():
     query = basequery("SELECT vName as [Vendor Name], COUNT(vtype) as Count FROM Model JOIN Vendor ON Model.v_id = Vendor.v_id GROUP BY vType ORDER BY (COUNT(vName)) LIMIT 5")
@@ -64,7 +63,6 @@ def manufacturersummary():
     plt.title('Count of Vendors Used')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
     plt.show()
-    plt.close()
 
 def aboutme():
      amWindow = tkinter.Toplevel()
