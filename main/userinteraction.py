@@ -31,19 +31,32 @@ def venderview():
     plt.title('Count of Vendors Used')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
     plt.show()
+    plt.close()
 
 
 def osview():
-    query = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS count FROM OperatingSystem GROUP BY [OS Manufacturer];")
+    query = basequery("SELECT [OS Manufacturer], COUNT([OS Name]) AS Count FROM OperatingSystem GROUP BY [OS Manufacturer];")
     query.fillna('Linux', inplace=True)
     query['OS Manufacturer'] = query['OS Manufacturer'].astype(str)
 
-    plt.bar(query['OS Manufacturer'], query['count'])
+    plt.bar(query['OS Manufacturer'], query['Count'])
     plt.xlabel('Operating System')
     plt.ylabel('Count')
     plt.title('Count of Operating Systems')  # Rotate x-axis labels if needed
     plt.tight_layout()  # Adjust layout to prevent clipping of labels
     plt.show()
+    plt.close()
+
+def manufacturersummary():
+    query = basequery("SELECT vName as [Vendor Name], COUNT(vtype) as Count FROM Model JOIN Vendor ON Model.v_id = Vendor.v_id GROUP BY vType ORDER BY (COUNT(vName)) LIMIT 5")
+    query['Vendor Name'] = query['Vendor Name'].astype(str)
+    plt.bar(query['Vendor Name'], query['Count'])
+    plt.xlabel('Vendor Name')
+    plt.ylabel('Count')
+    plt.title('Count of Vendors Used')  # Rotate x-axis labels if needed
+    plt.tight_layout()  # Adjust layout to prevent clipping of labels
+    plt.show()
+    plt.close()
 
 def aboutme():
      amWindow = tkinter.Toplevel()
@@ -56,7 +69,7 @@ def aboutme():
 #All teh buttons, and their placement in the grid as well as their commands.
 (Button(primary,text="About",command=aboutme).grid(row=0,column=0))
 (Button(primary,text="Vendor Summary",command=venderview).grid(row=1,column=0))
-(Button(primary,text="Manufacturer Summary",command="").grid(row=2,column=0))
+(Button(primary,text="Manufacturer Summary",command=manufacturersummary).grid(row=2,column=0))
 (Button(primary,text="Operating System View",command=osview).grid(row=3,column=0))
 
 (tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
