@@ -1,5 +1,5 @@
 Hello, this little project is a demostration on how to present data from a Database.
-Just a small idea on how presenting data can be done and should give an idea the diversity of Operating Systems, Vendors and Manufactures.
+Just a small idea on how presenting data can be done and should give an idea the diversity of Operating Systems, Vendors and Manufacturers.
 
 ## Getting Started On Windows Based Systems
 
@@ -16,7 +16,8 @@ Once steps 1 and 2 are completed in any order:
 3. If you are not at ``` C:\Users\Your_Profile_Name> ```
 	Type ``` cd ~ ``` to get to that location.
 
-Then Type/copy and paste:
+Then Type/copy and paste
+
 4. ``` git glone https://github.com/Aogle2/Computer_RMM_Brand_Recon.git ``` 
 
 Wait for the clone to finish
@@ -40,4 +41,4 @@ When done type in ``` deactivate ``` to leave the virtual enviroment.
 
 ## Getting Started On MacOS Based Systems
 
- 
+
