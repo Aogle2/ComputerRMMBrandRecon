@@ -16,7 +16,7 @@ Once steps 1 and 2 are completed in any order:
 3. If you are not at ``` C:\Users\Your_Profile_Name> ```
 	Type ``` cd ~ ``` to get to that location.
 
-Then Type/copy and paste
+Then Type/copy and paste:
 
 4. ``` git glone https://github.com/Aogle2/Computer_RMM_Brand_Recon.git ``` 
 
@@ -41,4 +41,7 @@ When done type in ``` deactivate ``` to leave the virtual enviroment.
 
 ## Getting Started On MacOS Based Systems
 
+Git is already installed on MacOS Systems, nothing is neededing to be done on that part.
 
+1. Open up Terminal from LaunchPad.
+2. 
