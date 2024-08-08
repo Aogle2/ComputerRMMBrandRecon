@@ -79,9 +79,6 @@ def aboutme():
 
 (tkinter.Label(primary,text=f"Hello there...{os.getlogin()}?").place(relx=0.0,rely=1.0,anchor="sw"))
 
-
-
-
-
+#Keep the main loop going, this does not close until you close the main window.
 primary.mainloop()
 
