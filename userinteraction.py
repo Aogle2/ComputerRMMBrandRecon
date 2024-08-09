@@ -15,7 +15,7 @@ primary.title("Computer Recon")
 
 #This is the base query that pulls info from the DB, ths is system agnostic, tested to work on MacOS, Linux and Windows.
 def basequery(query):
-    cnx = sqlite3.connect("TestDB.db")
+    cnx = sqlite3.connect("main.db")
     df = pandas.read_sql(query, cnx)
     cnx.close()
     return df
