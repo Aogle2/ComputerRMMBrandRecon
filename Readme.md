@@ -3,14 +3,14 @@ Just a small idea on how presenting data can be done and should give an idea the
 
 ## Tools and items used in this
 
-Python 3
-Virtual enviroment (venv)
+Python 3,
+Virtual enviroment (venv),
 Git
 
 ## Modules used
 
-Matplotlib
-Pandas
+Matplotlib,
+Pandas,
 Sqlite3
 
 ## Databases Used
