@@ -88,9 +88,9 @@ Git is already installed on MacOS Systems, nothing is neededing to be done on th
 
 5. ``` python3 -m venv venv ```
 
-7. ``` pip install -r requirements.txt ```
+7. ``` source venv/bin/activate ```
 
-8. ``` source venv/bin/activate ```
+8. ``` pip install -r requirements.txt ```
 
 This part will take some time to complete.
 
