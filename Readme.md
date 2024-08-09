@@ -76,7 +76,7 @@ When done type in ``` deactivate ``` to leave the virtual enviroment.
 
 Git is already installed on MacOS Systems, nothing is neededing to be done on that part.
 
-## This is assuming you are using the MacOS Sonoma. Older versions will have a simillar process.
+# This is assuming you are using the MacOS Sonoma. Older versions will have a simillar process.
 
 1. Download an install Python 3 from: https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg
 
