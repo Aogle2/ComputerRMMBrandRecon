@@ -59,7 +59,7 @@ Wait for the clone to finish
 
 5. ``` python -m venv venv ```
 
-6. ``` source venv\scripts\activate ```
+6. ``` source venv/scripts/activate ```
 
 7. ``` pip install -r requirements.txt ```
 
