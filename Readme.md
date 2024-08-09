@@ -1,24 +1,24 @@
 Hello, this little project is a demostration on how to present data from a Database.
 Just a small idea on how presenting data can be done and should give an idea the diversity of Operating Systems, Vendors and Manufacturers.
 
-##Tools and items used in this:
+##Tools and items used in this
 
 Python 3
 Virtual enviroment (venv)
 Git
 
-##Modules used:
+##Modules used
 
 Matplotlib
 Pandas
 Sqlite3
 
-##Databases Used:
+##Databases Used
 
 sqlite
 
 
-##Summary of what each part does:
+##Summary of what each part does
 
 Python 3, the main engine of getting this to work.
 
