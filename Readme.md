@@ -1,6 +1,41 @@
 Hello, this little project is a demostration on how to present data from a Database.
 Just a small idea on how presenting data can be done and should give an idea the diversity of Operating Systems, Vendors and Manufacturers.
 
+##Tools and items used in this:
+
+Python 3
+Virtual enviroment (venv)
+Git
+
+##Modules used:
+
+Matplotlib
+Pandas
+Sqlite3
+
+##Databases Used:
+
+sqlite
+
+
+##Summary of what each part does:
+
+Python 3, the main engine of getting this to work.
+
+venv is a built in module in Python 3 that allows the programmer to isolate what packages are needed and a way to easily install them. Prevents the "It worked on my computer" situation.
+
+Git, You're reading this now...on Github, However Git is used as source control to keep track and blame people properly.
+
+Matplotlib, this is used to show data visualy can do a lot for a person that wants to go above excel sheets and presentations.
+
+Pandas, this is data cleaning and anayalist and a lot more but for here I am useing it to pull data from sqlite into a dataframe I can mess with.
+
+Sqlite3, this is a bultin module in python 3 this is used to interact with Sqlite databases. This is also very much cross platform..something that this project strives for.
+
+Sqlite is a database that is used for local databases but is extreamly fast for reading, this is what is hosting all my data for this project.
+
+
+
 ## Getting Started On Windows Based Systems
 
 What you will need for this application to work on your system:
@@ -64,3 +99,5 @@ This part will take some time to complete.
 9. ``` python3 userinteraction.py ```
 
 10. Enjoy and explore around?...there are some bugs for this and is easy to break.
+
+When done, type in ```deactivate``` to leave the virtual enviroment.
