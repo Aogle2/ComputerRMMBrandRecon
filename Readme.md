@@ -43,5 +43,14 @@ When done type in ``` deactivate ``` to leave the virtual enviroment.
 
 Git is already installed on MacOS Systems, nothing is neededing to be done on that part.
 
-1. Open up Terminal from LaunchPad.
-2. 
+###This is assuming you are using the MacOS Sonoma. Older versions will have a simular process, just a diffrent version of Python.
+
+1. Download an install Python 3 from: https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg
+
+2. Open up Terminal from LaunchPad.
+
+3. Type or Copy and Paste: ```git clone https://github.com/Aogle2/Computer_RMM_Brand_Recon.git```
+
+4. ``` cd Computer_RMM_Brand_Recon ```
+
+5. ``` python3 -m venv venv ```
