@@ -38,7 +38,7 @@ Sqlite is a database that is used for local databases but is extreamly fast for 
 
 ## Getting Started On Windows Based Systems
 
-What you will need for this application to work on your system:
+### What you will need for this application to work on your system
 
 1. Download and Install Git from this link: https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-64-bit.exe
 
@@ -46,7 +46,7 @@ What you will need for this application to work on your system:
 
 
 Once steps 1 and 2 are completed in any order:
-1. Click on Start
+1. Click on Start or press the Windows key on your computer
 2. Type "git bash"
 
 Then Type/copy and paste:
