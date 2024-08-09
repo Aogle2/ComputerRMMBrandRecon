@@ -32,7 +32,7 @@ Wait for the clone to finish
 
 Wait for pip to install all the requirements.
 
-9. ```python main\userinteraction.py```
+9. ```python userinteraction.py```
 
 10. Enjoy the little demo and click around? It's fairly easy to break but shows a bit of what is possible and what could be inspired by it.
 
@@ -54,3 +54,13 @@ Git is already installed on MacOS Systems, nothing is neededing to be done on th
 4. ``` cd Computer_RMM_Brand_Recon ```
 
 5. ``` python3 -m venv venv ```
+
+7. ``` pip install -r requirements.txt ```
+
+8. ``` source venv/bin/activate ```
+
+This part will take some time to complete.
+
+9. ``` python3 userinteraction.py ```
+
+10. Enjoy and explore around?...there are some bugs for this and is easy to break.
